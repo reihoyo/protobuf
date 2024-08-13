@@ -12,7 +12,7 @@
 #include "absl/strings/escaping.h"
 #include "absl/strings/str_cat.h"
 #include "absl/strings/string_view.h"
-#include "google/protobuf/java_features.pb.h"
+#include "google/protobuf/compiler/java/java_features.pb.h"
 #include "google/protobuf/cpp_features.pb.h"
 #include "editions/defaults_test_embedded.h"
 #include "editions/defaults_test_embedded_base64.h"
