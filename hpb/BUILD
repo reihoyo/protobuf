@@ -6,7 +6,7 @@
 # https://developers.google.com/open-source/licenses/bsd
 
 load(
-    "//hpb/bazel:upb_cc_proto_library.bzl",
+    "//hpb/bazel:hpb_proto_library.bzl",
     "upb_cc_proto_library_copts",
 )
 load(
@@ -121,7 +121,7 @@ cc_test(
     copts = UPB_DEFAULT_CPPOPTS,
     deps = [
         ":internal",
-        "//src/google/protobuf/compiler/hpb/tests:test_model_upb_cc_proto",
+        "//src/google/protobuf/compiler/hpb/tests:test_model_hpb_proto",
         "//src/google/protobuf/compiler/hpb/tests:test_model_upb_proto",
         "//upb:mem",
         "@com_google_googletest//:gtest",
