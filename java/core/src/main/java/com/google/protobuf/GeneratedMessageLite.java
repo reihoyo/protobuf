@@ -1160,7 +1160,7 @@ public abstract class GeneratedMessageLite<
           final boolean isPacked,
           final Class singularType) {
     @SuppressWarnings("unchecked") // Subclasses ensure Type is a List
-    Type emptyList = (Type) Collections.emptyList();
+    Type emptyList = (Type) Collections.unmodifiableList(Collections.emptyList());
     return new GeneratedExtension<ContainingType, Type>(
         containingTypeDefaultInstance,
         emptyList,
@@ -1331,10 +1331,11 @@ public abstract class GeneratedMessageLite<
     Object fromFieldSetType(Object value) {
       if (descriptor.isRepeated()) {
         if (descriptor.getLiteJavaType() == WireFormat.JavaType.ENUM) {
-          List<Object> result = new ArrayList<>();
+          ProtobufArrayList<Object> result = new ProtobufArrayList<>();
           for (Object element : (List) value) {
             result.add(singularFromFieldSetType(element));
           }
+          result.makeImmutable();
           return result;
         } else {
           return value;
